@@ -3,6 +3,8 @@ package converterMetters.model;
 import java.util.Scanner;
 
 public class Converter {
+    public static Scanner sc = new Scanner(System.in);
+
     public static void showMenu() {
         System.out.println("======================");
         System.out.println("Bienvenido al Conversor ONE");
@@ -21,9 +23,26 @@ public class Converter {
 
     public static double convertMenu() {
         System.out.println("Ingrese el dato");
-        Scanner sc = new Scanner(System.in);
         double response = sc.nextDouble();
+        System.out.println("User response  " + response);
+
         return response;
 
+    }
+
+    public static void againMenu() {
+        System.out.println("1 - Nueva conversion ");
+        System.out.println("2 - LogOut");
+
+        int response = sc.nextInt();
+        switch (response) {
+            case 1:
+                showMenu();
+                break;
+            default:
+                System.out.println("Saliendo");
+                sc.close();
+                break;
+        }
     }
 }
